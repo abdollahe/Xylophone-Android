@@ -7,13 +7,85 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:srcCompat="@color/note1Color"
+                android:src="@color/note1Color"
+                android:id="@+id/note1_imageview"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="8dp"
+                android:tag="1"
+                android:onClick="noteClicked"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:srcCompat="@color/note2Color"
+                android:src="@color/note2Color"
+                android:id="@+id/note2_imageview"
+                android:paddingTop="8dp" android:paddingLeft="12dp" android:paddingRight="12dp" android:tag="2"
+                android:onClick="noteClicked"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@color/note3Color"
+                android:src="@color/note3Color"
+                android:id="@+id/note3_imageview"
+                android:layout_weight="1" android:paddingTop="8dp" android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:tag="3"
+                android:onClick="noteClicked"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@color/note4Color"
+                android:src="@color/note4Color"
+                android:id="@+id/note4_imageview"
+                android:layout_weight="1" android:paddingTop="8dp" android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:tag="4"
+                android:onClick="noteClicked" />
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@color/note5Color"
+                android:src="@color/note5Color"
+                android:id="@+id/note5_imageview"
+                android:layout_weight="1" android:paddingTop="8dp" android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:tag="5"
+                android:onClick="noteClicked"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@color/note6Color"
+                android:src="@color/note6Color"
+                android:id="@+id/note6_imageview"
+                android:layout_weight="1" android:paddingTop="8dp" android:paddingLeft="28dp"
+                android:paddingRight="28dp"
+                android:tag="6"
+                android:onClick="noteClicked"/>
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@color/note7Color"
+                android:src="@color/note7Color"
+                android:id="@+id/note7_imageview"
+                android:layout_weight="1" android:paddingTop="8dp" android:paddingLeft="32dp"
+                android:paddingRight="32dp" android:paddingBottom="8dp"
+                android:tag="7"
+                android:onClick="noteClicked"/>
 
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
