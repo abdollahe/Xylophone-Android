@@ -8,14 +8,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import java.io.File
-import java.net.URI
+import kotlin.Exception
+
 
 class MainActivity : AppCompatActivity() {
 
 
     val noteList = arrayOf("note1" , "note2" , "note3" ,"note4", "note5" ,"note6" , "note7")
-    lateinit var mediaPlayer : MediaPlayer
-
+    private var mediaPlayer : MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +26,16 @@ class MainActivity : AppCompatActivity() {
 
         val index = (view.tag as String).toInt()
 
-        val uri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + File.pathSeparator + "//" + packageName + "/raw/${noteList[index - 1]}")
+        val uri : Uri? = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + File.pathSeparator + "//" + packageName + "/raw/${noteList[index - 1]}.wav")
 
-        mediaPlayer = MediaPlayer.create(this, uri)
+        try {
+            mediaPlayer = MediaPlayer.create(this, uri)
+        }
+        catch (e : Exception) {
+            println("Error - Unable to find sound track in resource folder - ${e.message}")
+        }
 
-        mediaPlayer.start()
+        mediaPlayer?.start()
 
     }
 
