@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         val index = (view.tag as String).toInt()
 
-        val uri : Uri? = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + File.pathSeparator + "//" + packageName + "/raw/${noteList[index - 1]}.wav")
+        val uri : Uri? = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + File.pathSeparator + "//" + packageName + "/raw/${noteList[index - 1]}")
 
         try {
             mediaPlayer = MediaPlayer.create(this, uri)
